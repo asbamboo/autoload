@@ -2,7 +2,9 @@
 namespace asbamboo\autoload;
 
 /**
- * 如果 $mapping[\modal\] = '/modal', 那么 \modal\DemoEntity\DemoEntity => /modal/demo-entity/DemoEntity.php
+ * 使用例子:
+ *  - $Autoload = new asbamboo/autoload/Autoload();
+ *  - $Autoload->addMappingDir('modal', __DIR__ . '/modal');
  * 
  * @author 李春寅 <licy2013@aliyun.com>
  * @since 2018年3月11日
