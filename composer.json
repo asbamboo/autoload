@@ -13,5 +13,6 @@
         	"asbamboo\\autoload\\": ""
 		}
     },
+    "prefer-stable": true,
     "minimum-stability": "dev"
 }
