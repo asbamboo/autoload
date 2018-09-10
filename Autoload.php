@@ -5,7 +5,7 @@ namespace asbamboo\autoload;
  * 使用例子:
  *  - $Autoload = new asbamboo/autoload/Autoload();
  *  - $Autoload->addMappingDir('modal', __DIR__ . '/modal');
- * 
+ *
  * @author 李春寅 <licy2013@aliyun.com>
  * @since 2018年3月11日
  */
@@ -18,7 +18,7 @@ class Autoload
     protected $mapping  = [];
 
     /**
-     * 
+     *
      */
     public function __construct()
     {
@@ -37,7 +37,7 @@ class Autoload
         }
         return $this;
     }
-    
+
     /**
      * 判断 $namespace mapping信息是否存在
      * @param string $namespace
@@ -47,9 +47,9 @@ class Autoload
     {
         return isset($this->mapping[$namespace]);
     }
-    
+
     /**
-     * 添加一个namespace映射关系。如果原先已经存在，用现在的替换 
+     * 添加一个namespace映射关系。如果原先已经存在，用现在的替换
      * @param string $namespace
      * @param string $dir
      * @return self
@@ -59,7 +59,7 @@ class Autoload
         $this->mapping[$namespace] = rtrim( $dir, DIRECTORY_SEPARATOR ) . DIRECTORY_SEPARATOR;
         return $this;
     }
-    
+
     /**
      *  自动加载$class
      * @param string $class
