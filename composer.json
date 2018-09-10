@@ -13,6 +13,9 @@
         	"asbamboo\\autoload\\": ""
 		}
     },
+    "require": {
+        "php": "^7.2"
+    },
     "prefer-stable": true,
     "minimum-stability": "dev"
 }
