@@ -88,9 +88,10 @@ class Autoload
                     }
                     $class_data[$index] = strtolower(trim(preg_replace('@([A-Z])@', '-$1',$data),'-'));
                 }
-                $class_data     = implode('\\', $class_data);
-                $class_path = trim(str_replace([$namespace, '\\'], ['', DIRECTORY_SEPARATOR], $class_data), DIRECTORY_SEPARATOR) . '.php';
-                $test_path  = $dir . $class_path;
+                $class_data                 = implode('\\', $class_data);
+                $namespace_to_dir_format    = strtolower(trim(preg_replace('@([A-Z])@', '-$1',$namespace),'-'));
+                $class_path                 = trim(str_replace([$namespace_to_dir_format, '\\'], ['', DIRECTORY_SEPARATOR], $class_data), DIRECTORY_SEPARATOR) . '.php';
+                $test_path                  = $dir . $class_path;
                 if(file_exists( $test_path )){
                     include $test_path;
                 }
