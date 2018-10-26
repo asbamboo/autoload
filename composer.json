@@ -9,9 +9,10 @@
         }
     ],
     "autoload": {
-        "psr-4": {
+    	"psr-4": {
         	"asbamboo\\autoload\\": ""
-		}
+		},
+        "files": ["bootstrap.php"]
     },
     "require": {
         "php": "^7.2"

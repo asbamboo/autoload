@@ -78,11 +78,9 @@ class Autoload
          * 先逆向排序mapping数组，保证先判断子命名空间。然后判断类文件存在的话，include该文件。
          */
         if(krsort($this->mapping)){
-            foreach($this->mapping AS $namespace => $dir )
-            {
+            foreach($this->mapping AS $namespace => $dir ){
                 $class_data      = explode('\\', $class);
-                foreach($class_data AS $index => $data)
-                {
+                foreach($class_data AS $index => $data){
                     if(!isset($class_data[$index + 1])){
                         break;
                     }
@@ -94,6 +92,7 @@ class Autoload
                 $test_path                  = $dir . $class_path;
                 if(file_exists( $test_path )){
                     include $test_path;
+                    return;                    
                 }
             }
         }
