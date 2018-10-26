@@ -15,7 +15,7 @@ if(!class_exists('asbamboo\\autoload\\Autoload')){
 }
 $Autoload   = new asbamboo\autoload\Autoload();
 $psr4s      = include $vendor_dir . '/composer/autoload_psr4.php';
-foreach($psr4s AS $namespace => $dir){
-    $Autoload->addMappingDir($namespace, $dir);
+foreach($psr4s AS $namespace => $dirs){
+    $Autoload->addMappingDir($namespace, current($dirs));
 }
 return $Autoload;
