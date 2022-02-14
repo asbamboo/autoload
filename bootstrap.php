@@ -12,7 +12,13 @@ if(!class_exists('asbamboo\\autoload\\Autoload')){
     }else{
         require_once dirname(dirname(__DIR__)) . '/autoload.php';
     }
+}else{
+    if(file_exists(__DIR__ . '/vendor/autoload.php')){
+        require_once __DIR__ . '/vendor/autoload.php';
+        $vendor_dir = __DIR__ . '/vendor';
+    }
 }
+
 $Autoload   = new asbamboo\autoload\Autoload();
 $psr4s      = include $vendor_dir . '/composer/autoload_psr4.php';
 foreach($psr4s AS $namespace => $dirs){
